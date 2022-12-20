@@ -1,16 +1,21 @@
 module.exports = {
     name: "yes",
     description: "Enviar emote animado: (Si)",
-    options: [],
-    run: (client, message, prefix, args) => {
-        const target = message.mentions.users.map(u => u.id);
-        if(message.content.match(`<@${target}>`)) {
-            message.reply("<a:yes:1037443201025458236>");
+    options: [{
+        name: "usuario",
+        description: "Elige el usuario",
+        type: 6,
+        required: false
+      }],
+    run: (client, int) => {
+        const target = int.options._hoistedOptions.map(x => x.user.username);
+        if(int.options.getUser("usuario")) {
+            int.reply("<a:yes:1037443201025458236>");
         } else if(message.mentions.repliedUser === null) {
-            message.delete();
-            message.channel.send("<a:yes:1037443201025458236>");
+            int.delete();
+            int.reply("<a:yes:1037443201025458236>");
         } else {
-            message.reply("<a:yes:1037443201025458236>");
+            int.reply("<a:yes:1037443201025458236>");
         };
     }
 };

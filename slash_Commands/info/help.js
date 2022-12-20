@@ -4,7 +4,7 @@ module.exports = {
   name: "help",
   description: "Lista de comandos",
   options: [],
-  run: (client, int, args) => {
+  run: (client, int) => {
     const embed = new EmbedBuilder()
       .setTitle("Para ver:")
       .addFields(

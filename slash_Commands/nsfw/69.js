@@ -9,7 +9,7 @@ module.exports = {
       type: 6,
       required: true
     }],
-   run: async (client, int) => {
+   run: (client, int) => {
     const autor = int.user.username;
     const target = int.options._hoistedOptions.map(x => x.user.username);
     client.channels.fetch("1033136546917912616")
