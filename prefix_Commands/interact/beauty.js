@@ -2,9 +2,7 @@ const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
   name: "beauty",
-  description: "Mensaje para neir",
-  options: [],
-  run: (client, message, args) => {
+  run: (client, message) => {
     const embed = new EmbedBuilder()
       .setTitle("Neir es bellisima")
       .setDescription("❤️ úwù")

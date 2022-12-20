@@ -3,8 +3,7 @@ const { EmbedBuilder } = require("discord.js");
 module.exports = {
   name: "help",
   description: "Lista de comandos",
-  options: [],
-  run: (client, message, prefix, args) => {
+  run: (client, message) => {
     const embed = new EmbedBuilder()
       .setTitle("Para ver:")
       .addFields(

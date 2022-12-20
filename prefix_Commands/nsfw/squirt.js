@@ -2,15 +2,12 @@ const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
     name: "squirt",
-    description: "Venirse",
-    options: [],
-   run: (client, message, prefix, args) => {
+   run: (client, message) => {
     const autor = message.author.username;
     client.channels.fetch("1032748119273783296")
-    .then(channel => channel.messages.fetch({ limit: 50, cache: false })
+    .then(channel => channel.messages.fetch({ limit: 100, cache: false })
     .then(msgs => {
-      const links = (msgs.map(a => a.attachments.map(u => u.url)));
-      const gallery = links.flat();
+      const gallery = msgs.map(a => a.attachments.map(u => u.url)).flat();
       const embed = new EmbedBuilder()
         .setDescription(`**${autor}** se esta viniedo a chorros <:emoji_8:1034341943339122698>`)
         .setColor("Red")
