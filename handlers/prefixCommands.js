@@ -1,8 +1,9 @@
 const fs = require("fs");
+require("colors");
 
 module.exports = {
     name: "prefixCommands",
-    run: (client, args) => {
+    run: (client) => {
         fs.readdirSync("./prefix_Commands").forEach((dir) => {
             const commands = fs.readdirSync(`./prefix_Commands/${dir}/`).filter((file) => file.endsWith(".js"));
             for (let file of commands) {
