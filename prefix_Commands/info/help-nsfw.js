@@ -6,7 +6,7 @@ module.exports = {
   description: "Lista de comandos NSFW",
   run: (client, message) => {
     const nsfw = new Collection();
-    fs.readdirSync("./commands/nsfw").forEach((file) => {
+    fs.readdirSync("./prefix_Commands/nsfw").forEach((file) => {
       let command_nsfw = require(`../nsfw/${file}`);
       nsfw.set(command_nsfw.name, command_nsfw);
     });
